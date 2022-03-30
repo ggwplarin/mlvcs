@@ -1,0 +1,60 @@
+@import "colors.scss";
+@import "fonts.scss";
+
+.username {
+    padding: 0rem 0rem 0rem 1rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    color: $dark-on-surface;
+    font-family: RobotoMono, Roboto, monospace;
+    transition: opacity 50ms ease-out;
+    &:hover {
+        opacity: 0.85;
+    }
+}
+.avatar {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 1rem;
+}
+.signin {
+    margin-right: 1rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    color: $dark-on-surface;
+    font-family: RobotoMono, Roboto, monospace;
+    transition: opacity 50ms ease-out;
+    &:hover {
+        opacity: 0.85;
+    }
+}
+
+.signup {
+    // border: 0.125rem solid $dark-outline-50;
+    // border-radius: 0.25rem;
+    color: $dark-on-surface;
+    height: 1.5rem;
+    font-size: 1rem;
+    font-family: RobotoMono, Roboto, monospace;
+    transition: opacity 50ms ease-out;
+    &:hover {
+        opacity: 0.85;
+    }
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    float: right;
+
+    height: 100%;
+}
+
+.userBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    float: right;
+    height: 100%;
+}

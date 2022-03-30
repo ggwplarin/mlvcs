@@ -1,0 +1,46 @@
+@import "colors.scss";
+@import "fonts.scss";
+
+.headingContainer {
+    width: 100%;
+    padding: 0.5rem 2rem 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cloneCommand {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 0.125rem solid $dark-outline-25;
+    color: $dark-outline;
+    border-radius: 0.25rem;
+    user-select: all;
+    font-family: RobotoMono;
+}
+
+.path {
+    font-family: RobotoMono, Roboto, monospace;
+    font-size: 1.5rem;
+    color: $dark-outline;
+    padding: 0.25rem;
+    font-weight: 400;
+    &User {
+        font-size: 1.5rem;
+        color: $dark-primary;
+        font-weight: 400;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &Repo {
+        font-size: 1.5rem;
+        color: $dark-primary;
+        font-weight: 600;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

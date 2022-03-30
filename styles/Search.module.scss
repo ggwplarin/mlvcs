@@ -1,0 +1,94 @@
+@import "colors.scss";
+@import "fonts.scss";
+
+.searchContainer {
+    float: left;
+    overflow: visible;
+    padding: 1rem 0rem 1rem 0rem;
+    height: 4.25rem;
+}
+
+.searchInput {
+    font-family: RobotoMono, Roboto, monospace;
+    font-size: 1rem;
+    font-weight: 300;
+    &::placeholder {
+        color: $dark-on-surface;
+        opacity: 0.5;
+    }
+    padding-left: 0.5rem;
+    color: $dark-on-surface;
+    border: 0.125rem solid $dark-outline-50;
+    border-radius: 0.25rem;
+    background: $dark-surface;
+    width: 20rem;
+    height: 2.25rem;
+    transition: border-color 150ms ease-out;
+    &:focus {
+        width: 20rem;
+        border: 0.125rem solid $dark-primary;
+        outline: none;
+        &::placeholder {
+            color: $dark-on-surface;
+            opacity: 0.75;
+        }
+    }
+    &Found {
+        font-family: RobotoMono, Roboto, monospace;
+        font-size: 1rem;
+        font-weight: 300;
+        &::placeholder {
+            color: $dark-on-surface;
+            opacity: 0.5;
+        }
+        padding-left: 0.5rem;
+        color: $dark-on-surface;
+        border: 0.125rem solid $dark-outline-50;
+        border-radius: 0.25rem;
+        background: $dark-surface;
+        width: 20rem;
+        height: 2.25rem;
+        transition: border-color 150ms ease-out;
+        &:focus {
+            border: 0.125rem solid $dark-primary;
+            outline: none;
+            &::placeholder {
+                color: $dark-on-surface;
+                opacity: 0.75;
+            }
+        }
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+.searchResultsContainer {
+    transition: width 50ms ease-out;
+    width: 20rem;
+    border-radius: 0.25rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    background: $dark-surface;
+    margin: 0;
+    border: 0.125rem solid $dark-outline-50;
+    border-top: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.searchItem {
+    color: $dark-on-surface;
+    padding: 0.75rem;
+    cursor: pointer;
+    &:hover {
+        background: $dark-outline-25;
+    }
+}
+.searchResultType {
+    font-size: 0.75rem;
+    background: $dark-outline-25;
+    padding: 0.125rem 0.5rem;
+    margin-right: 0.5rem;
+    color: $dark-primary;
+    border-radius: 1rem;
+    font-weight: 500;
+}

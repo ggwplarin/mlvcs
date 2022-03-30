@@ -1,0 +1,28 @@
+@import "colors.scss";
+@import "fonts.scss";
+
+.navBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    float: left;
+    margin: 0 1.5rem;
+    height: 100%;
+}
+.navItem {
+    display: flex;
+    align-items: center;
+    margin: 0rem 0.25rem;
+}
+
+.navItemTitle {
+    padding: 0 0.25rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    color: $dark-on-surface;
+    font-family: RobotoMono, Roboto, monospace;
+    transition: opacity 50ms ease-out;
+    &:hover {
+        opacity: 0.85;
+    }
+}

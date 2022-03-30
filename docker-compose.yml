@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  mlvcs:
+    image: cr.yandex/crpqua6dohg4l6v9vogj/mlvcs
+    ports:
+      - "3000:3000"
+  mongodb:
+    image: cr.yandex/crpqua6dohg4l6v9vogj/mongodb
