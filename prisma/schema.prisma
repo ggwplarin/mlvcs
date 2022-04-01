@@ -39,17 +39,18 @@ model Users {
 }
 
 model Repos {
-  id           String     @id @default(uuid())
-  name         String
-  access       RepoAccess @default(public)
-  totalSize    Decimal    @default(0)
-  pinUsers     Users?     @relation("pinned_repos", fields: [pinUsersId], references: [id])
-  pinUsersId   String?
-  creator      Users?     @relation("creator", fields: [creatorId], references: [id])
-  creatorId    String?
-  owners       Users[]    @relation("owners")
-  editors      Users[]    @relation("editors")
-  contributors Users[]    @relation("contributors")
+  id             String           @id @default(uuid())
+  name           String
+  access         RepoAccess       @default(public)
+  totalSize      Decimal          @default(0)
+  pinUsers       Users?           @relation("pinned_repos", fields: [pinUsersId], references: [id])
+  pinUsersId     String?
+  creator        Users?           @relation("creator", fields: [creatorId], references: [id])
+  creatorId      String?
+  owners         Users[]          @relation("owners")
+  editors        Users[]          @relation("editors")
+  contributors   Users[]          @relation("contributors")
+  modelsVersions ModelsVersions[]
 }
 
 model Models {
@@ -63,6 +64,8 @@ model ModelsVersions {
   originalFilename String
   size             Decimal  @default(0)
   pushedAt         DateTime @default(now())
+  Repos            Repos?   @relation(fields: [reposId], references: [id])
+  reposId          String?
 }
 
 model Invoices {

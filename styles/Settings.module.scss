@@ -1,0 +1,50 @@
+@import "colors.scss";
+@import "fonts.scss";
+
+.container {
+    padding: 1rem 2rem;
+}
+
+.title {
+    font-family: RobotoMono;
+    font-size: 1.75rem;
+    color: $dark-on-surface;
+}
+
+.text {
+    font-size: 1rem;
+    font-family: RobotoMono;
+    color: $dark-on-surface;
+    margin-bottom: 2rem;
+}
+
+.key {
+    font-size: 1rem;
+    user-select: all;
+    white-space: nowrap;
+    font-family: RobotoMono;
+    color: $dark-on-surface;
+}
+.keyContainer {
+    display: flex;
+    flex-direction: row;
+}
+.keyBorder {
+    border: 0.125rem solid $dark-outline-50;
+    padding: 0.5rem;
+    width: 40rem;
+    overflow: hidden;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    border-right-width: 0;
+}
+.keyRollButton {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 0.125rem solid $dark-outline-50;
+    color: $dark-primary;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    font-family: RobotoMono;
+    background: transparent;
+}
