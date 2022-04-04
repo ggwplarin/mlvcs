@@ -32,3 +32,111 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+```
+mlvcs
+├─ .dockerignore
+├─ .eslintrc.json
+├─ .gitignore
+├─ components
+│  ├─ Form.tsx
+│  ├─ Header
+│  │  ├─ Header.tsx
+│  │  └─ index.ts
+│  ├─ Layout.tsx
+│  ├─ Nav
+│  │  ├─ index.ts
+│  │  ├─ Nav.tsx
+│  │  └─ NavItem.tsx
+│  ├─ RepoHeading
+│  │  ├─ index.ts
+│  │  └─ RepoHeading.tsx
+│  ├─ Search
+│  │  ├─ index.ts
+│  │  └─ Search.tsx
+│  ├─ Tabs
+│  │  ├─ index.ts
+│  │  ├─ Tab.tsx
+│  │  ├─ Tabs.tsx
+│  │  └─ TabTitle.tsx
+│  └─ User
+│     ├─ index.ts
+│     └─ User.tsx
+├─ docker-compose.yml
+├─ Dockerfile
+├─ healthcheck.js
+├─ lib
+│  ├─ auth
+│  │  ├─ auth-bearer.ts
+│  │  └─ rollKey.ts
+│  ├─ auth-cookies.ts
+│  ├─ auth.ts
+│  ├─ hooks.ts
+│  ├─ passport-local.ts
+│  ├─ prismaClient.ts
+│  ├─ upl.js
+│  ├─ user.ts
+│  └─ UserStorage.ts
+├─ LICENSE
+├─ next-env.d.ts
+├─ next.config.js
+├─ package.json
+├─ pages
+│  ├─ api
+│  │  ├─ auth
+│  │  │  ├─ login.ts
+│  │  │  ├─ logout.ts
+│  │  │  └─ signup.ts
+│  │  ├─ repos
+│  │  │  └─ index.ts
+│  │  ├─ search.ts
+│  │  ├─ settings
+│  │  │  ├─ account
+│  │  │  │  └─ index.ts
+│  │  │  ├─ keys.ts
+│  │  │  └─ profile
+│  │  │     └─ index.ts
+│  │  ├─ upload.ts
+│  │  └─ user.ts
+│  ├─ index.tsx
+│  ├─ login.tsx
+│  ├─ overview.tsx
+│  ├─ settings
+│  │  ├─ account.tsx
+│  │  ├─ keys.tsx
+│  │  └─ profile.tsx
+│  ├─ signup.tsx
+│  ├─ [user]
+│  │  ├─ index.tsx
+│  │  └─ [repo]
+│  │     ├─ index.tsx
+│  │     ├─ settings.tsx
+│  │     └─ [model]
+│  │        └─ index.tsx
+│  └─ _app.tsx
+├─ prisma
+│  └─ schema.prisma
+├─ public
+│  ├─ favicon.ico
+│  ├─ fonts
+│  │  ├─ RobotoMono-Italic-VariableFont_wght.ttf
+│  │  └─ RobotoMono-VariableFont_wght.ttf
+│  └─ vercel.svg
+├─ README.md
+├─ styles
+│  ├─ colors.scss
+│  ├─ Dropdown.module.scss
+│  ├─ fonts.scss
+│  ├─ globals.scss
+│  ├─ Header.module.scss
+│  ├─ Home.module.scss
+│  ├─ Nav.module.scss
+│  ├─ RepoHeading.module.scss
+│  ├─ Search.module.scss
+│  ├─ Settings.module.scss
+│  ├─ Tabs.module.scss
+│  └─ User.module.scss
+├─ tsconfig.json
+└─ yarn.lock
+
+```
