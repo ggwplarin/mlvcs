@@ -13,8 +13,8 @@ function Header(props: Props) {
         <div>
             <Search />
             <Nav>
-                <NavItem href="/" title="aaa" />
-                <NavItem href="/" title="aaaaa" />
+                <NavItem href="/" title="" />
+                <NavItem href="/" title="" />
             </Nav>
             <User user={props.user} />
         </div>

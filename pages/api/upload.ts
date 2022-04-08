@@ -44,8 +44,11 @@ export default async function handler(
     if (!request.headers.key) return response.status(401).send(JSON.stringify({ error: "No api key provided" }))
     if (request.headers['content-type']?.includes('multipart/form-data') && request.query['type'] == 'model') {
         console.log("Uploading model")
-        const repoName = request.headers.repo?.toString().match('(\S*)\/(\S*)')![0]
-        const repoUser = request.headers.repo?.toString().match('(\S*)\/(\S*)')![0]
+        // const repoName = request.headers.repo?.toString().match('(\S*)\/(\S*)')![1]
+        // const repoUser = request.headers.repo?.toString().match('(\S*)\/(\S*)')![0]
+        const repoName = request.query.repoName
+        const repoUser = request.query.repoUser
+
         const format = sizeFormatter({
             std: 'JEDEC', // 'SI' (default) | 'IEC' | 'JEDEC'
             decimalPlaces: 2,
@@ -218,7 +221,7 @@ export default async function handler(
         if (!repo) {
             const newRepo = await prisma.repos.create({
                 data: {
-                    name: request.query['name'] as string,
+                    name: repoName as string,
                     //@ts-ignore
                     creatorId: user.id,
                     modelsVersions: {

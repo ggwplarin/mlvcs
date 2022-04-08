@@ -1,0 +1,34 @@
+@import "colors.scss";
+@import "fonts.scss";
+
+.modelVersionFilename {
+    color: $dark-on-surface;
+    font-family: Roboto;
+    font-size: 1rem;
+}
+.modelVersionVersion {
+    font-size: 0.75rem;
+    background: $dark-outline-25;
+    padding: 0.125rem 0.5rem;
+    margin-right: 0.5rem;
+    color: $dark-primary;
+    border-radius: 1rem;
+    font-weight: 500;
+}
+
+.modelVersionDate {
+    color: $dark-outline;
+    font-family: Roboto;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.modelVersionDownload {
+    color: $dark-primary;
+    font-family: Roboto;
+    font-size: 1rem;
+}
+
+.modelVersionContainer {
+    padding-top: 1rem;
+}

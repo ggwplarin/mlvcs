@@ -9,17 +9,6 @@ type SearchResult = {
     wiki?: string
 }
 
-const testData: SearchResult[] = [
-    { user: "ggert", repo: "grwerwer" },
-    { user: "ggert", repo: "tfsdgqr" },
-    { user: "yhutryrtd", repo: "rewr_ttrewwe" },
-    { user: "hdfghf", repo: "ggg-fgwerwe" },
-    { user: "ytrersd", repo: "ggghhwew" },
-    { user: "xcvtws", repo: "yytrerw" },
-    { user: "gdfbcv", repo: "wqerwe" },
-    { user: "fdgwe", repo: "faff" }
-]
-
 async function searchRepositories(query: string): Promise<SearchResult[]> {
     const results: SearchResult[] = []
     const repos = await prisma.repos.findMany({
@@ -27,7 +16,7 @@ async function searchRepositories(query: string): Promise<SearchResult[]> {
             name: {
                 contains: query
             }
-        }
+        }, include: { creator: true }
     })
     repos.forEach((repo: any) => results.push({ repo: repo.name, user: repo.creator.username, type: "REPO" }))
     results.forEach((r) => r.type = "REPO")

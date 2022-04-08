@@ -7,13 +7,13 @@ export default async function repo(req: NextApiRequest,
     const user = await prisma.users.findFirst({
         where: {
             key: {
-                equals: req.query['key'] as string,
+                equals: req.headers.key as string,
             }
         }
     })
 
-    const name = req.query.repo as string
-    const creator = req.query.user as string
+    const name = req.headers.name as string
+    const creator = req.headers.user as string
     const repo = await prisma.repos.findFirst(
         {
             where: {
@@ -26,17 +26,28 @@ export default async function repo(req: NextApiRequest,
                     }
                 }
             },
-            include: { creator: true, contributors: true, owners: true, editors: true }
+            include: {
+                creator: true,
+                // contributors: true,
+                // owners: true,
+                // editors: true,
+                modelsVersions: true
+            }
         }
     )
     if (repo?.access == 'public') {
+        console.log('Public repo:')
+        console.log(repo)
         return res.status(200).json({ repo })
     }
     else {
         if (user && (repo?.creator == user || repo?.owners.includes(user!) || repo?.contributors.includes(user!) || repo?.owners.includes(user!))) {
+            console.log('Private repo:')
+            console.log(repo)
             return res.status(200).json({ repo })
         }
         else {
+            console.log('Unauthorized access')
             return res.status(401).json("")
         }
     }
