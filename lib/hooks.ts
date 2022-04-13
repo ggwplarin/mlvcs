@@ -9,6 +9,8 @@ const fetcher = (url: string) =>
             return { user: data?.user || null }
         })
 
+//Hook needed to get user data from current session or redirect to login page
+//if session not found
 export function useUser({ redirectTo, redirectIfFound }: { redirectTo?: any, redirectIfFound?: any } = {}) {
     const { data, mutate, error } = useSWR('/api/user', fetcher)
     const user = data?.user
